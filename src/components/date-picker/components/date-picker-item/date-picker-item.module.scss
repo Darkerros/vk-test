@@ -1,0 +1,21 @@
+.datePickerItem {
+  padding: 15px 5px;
+
+  border-radius: 5px;
+
+  cursor: pointer;
+
+  &__selected {
+    background: #42f142;
+    pointer-events: none;
+  }
+
+  &__reserved {
+    background: red;
+    pointer-events: none;
+  }
+
+  &:not(&__reserved):hover {
+    background: yellow;
+  }
+}
