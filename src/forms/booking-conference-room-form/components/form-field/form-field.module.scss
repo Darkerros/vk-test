@@ -1,0 +1,12 @@
+.formField {
+  border: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  &__title {
+    color: #757575;
+    text-align: center;
+    margin: 0;
+  }
+}
