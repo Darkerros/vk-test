@@ -1,5 +1,5 @@
 import styles from './date-picker.module.scss';
-import {FC, MouseEventHandler, useCallback, useState} from "react";
+import {FC, memo, MouseEventHandler, useCallback, useState} from "react";
 import {DatePickerMenu} from "../date-picker-menu/date-picker-menu";
 import {IDateItem} from "../../types/date-item-interface";
 
@@ -12,7 +12,7 @@ interface DataPickerProps {
     onChange: (date: string) => void;
 }
 
-export const DatePicker: FC<DataPickerProps> = ({dates, value, onChange}) => {
+export const DatePicker: FC<DataPickerProps> = memo(({dates, value, onChange}) => {
     const [isDateMenuActive, setIsDateMenuActive] = useState<boolean>(false)
 
     const handleClick: MouseEventHandler = useCallback(() => {
@@ -30,8 +30,8 @@ export const DatePicker: FC<DataPickerProps> = ({dates, value, onChange}) => {
 
     return (
         <div className={styles.datePicker}>
-            <input value={value} name={"date"} className={styles.datePicker__dateInput} onMouseDown={handleClick} onFocus={handleFocus} onBlur={handleBlur} placeholder={'Выберите дату'} type="text" readOnly={true}/>
+            <input value={value} name={"date"} className={styles.datePicker__dateInput} onMouseDown={handleClick} onFocus={handleFocus} onBlur={handleBlur} placeholder={'Выберите дату'} type="text" min={5} readOnly={true} required/>
             <DatePickerMenu isActive={isDateMenuActive} dates={dates} onSelect={handleSelect} selectDate={value}/>
         </div>
     );
-};
+});

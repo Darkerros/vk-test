@@ -1,13 +1,17 @@
 .timePicker {
   position: relative;
+  width: fit-content;
 
   &__timeInput {
     padding: 5px;
 
+    box-sizing: border-box;
+    width: 100%;
+
     border: none;
     border-radius: 3px;
 
-    background: aliceblue;
+    background: #f5f5f5;
 
     cursor: pointer;
 

@@ -1,7 +1,7 @@
 import styles from './time-picker.module.scss';
 import {TimePickerMenu} from "../time-picker-menu/time-picker-menu";
 import {ITimeItem} from "../../types/time-item-interface";
-import {FC, MouseEventHandler, useCallback, useState} from "react";
+import {FC, memo, MouseEventHandler, useCallback, useState} from "react";
 
 interface TimePickerProps {
     timeList: ITimeItem[];
@@ -10,7 +10,7 @@ interface TimePickerProps {
     value: string;
 }
 
-export const TimePicker:FC<TimePickerProps> = ({timeList, onChange, value}) => {
+export const TimePicker:FC<TimePickerProps> = memo(({timeList, onChange, value}) => {
     const [isTimeMenuActive, setIsTimeMenuActive] = useState<boolean>(false)
 
     const handleClick: MouseEventHandler = useCallback(() => setIsTimeMenuActive(prev => !prev), [])
@@ -20,8 +20,8 @@ export const TimePicker:FC<TimePickerProps> = ({timeList, onChange, value}) => {
 
     return (
         <div className={styles.timePicker}>
-            <input value={value} className={styles.timePicker__timeInput} type="text" placeholder={'Выберите время'} readOnly={true} onMouseDown={handleClick} onFocus={handleFocus} onBlur={handleBlur}/>
+            <input value={value} name={"time"} className={styles.timePicker__timeInput} type="text" placeholder={'Выберите время'} readOnly={true} onMouseDown={handleClick} onFocus={handleFocus} onBlur={handleBlur} required/>
             <TimePickerMenu timeList={timeList} isMenuActive={isTimeMenuActive} onSelect={handleSelect} selectTime={value}/>
         </div>
     );
-};
+});
