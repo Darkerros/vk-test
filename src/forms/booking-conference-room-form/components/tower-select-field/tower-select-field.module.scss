@@ -1,0 +1,22 @@
+.towerSelectField {
+
+  &__selectItemContainer {
+    margin: 15px auto 0;
+
+    min-width: 160px;
+
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__radioBtnContainer {
+    color: #4d4d4d;
+
+    cursor: pointer;
+
+    gap: 5px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+}
