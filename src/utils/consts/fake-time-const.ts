@@ -1,0 +1,17 @@
+export const fakeTimeConst = [
+    { time: '9:00-9:30', isReserved: false },
+    { time: '9:30-10:00', isReserved: false },
+    { time: '10:00-10:30', isReserved: false },
+    { time: '10:30-11:00', isReserved: true },
+    { time: '11:00-11:30', isReserved: false },
+    { time: '11:30-12:00', isReserved: true },
+    { time: '12:00-13:30', isReserved: false },
+    { time: '13:30-14:00', isReserved: true },
+    { time: '14:00-15:30', isReserved: false },
+    { time: '15:00-16:30', isReserved: false },
+    { time: '16:30-17:30', isReserved: true },
+    { time: '17:30-18:00', isReserved: true },
+    { time: '18:00-18:30', isReserved: true },
+    { time: '18:30-19:00', isReserved: false },
+    { time: '19:00-20:00', isReserved: false },
+]
