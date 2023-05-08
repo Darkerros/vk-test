@@ -1,0 +1,24 @@
+.bookingConferenceRoomForm {
+  background: white;
+
+  padding: 10px 40px;
+  border-radius: 5px;
+
+  gap: 35px;
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    color: #757575;
+    font-weight: bold;
+
+    margin: 15px 0 0;
+    text-align: center;
+  }
+
+  &__fieldsContainer {
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+}
