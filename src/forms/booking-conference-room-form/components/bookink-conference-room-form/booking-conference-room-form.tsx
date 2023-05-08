@@ -2,11 +2,17 @@ import styles from './booking-conference-room-form.module.scss'
 import {FieldsContainer} from "../fields-container/fields-container";
 import {ButtonContainer} from "../button-container/button-container";
 import {useAppSelector} from "../../../../hooks/use-app-selector";
-import {FormEventHandler} from "react";
+import {FC, FormEventHandler} from "react";
 import {useAppDispatch} from "../../../../hooks/use-app-dispatch";
 import {bookingConferenceRoomFormActions} from "../../../../services/reducers/boking-conference-room-form-reducer";
+import {IFormData} from "../../types/form-data.interface";
 
-export const BookingConferenceRoomForm = () => {
+
+interface BookingConferenceRoomFormProps {
+    onSubmit: (formData: IFormData) => void;
+}
+
+export const BookingConferenceRoomForm:FC<BookingConferenceRoomFormProps> = ({onSubmit}) => {
     const dispatch = useAppDispatch()
     const inputs = useAppSelector(state => state.bookingConferenceRoomFormReducer.inputs)
 
@@ -29,7 +35,7 @@ export const BookingConferenceRoomForm = () => {
             comment
         }
 
-        console.log(formData)
+        onSubmit(formData)
     }
 
     const handleReset:FormEventHandler = (event) => {
