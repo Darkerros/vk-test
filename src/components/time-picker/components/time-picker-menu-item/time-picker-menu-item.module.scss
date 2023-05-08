@@ -1,0 +1,20 @@
+.timePickerMenuItem {
+  padding: 10px 5px;
+
+  border-radius: 5px;
+
+  &:hover {
+    cursor: pointer;
+    background: yellow;
+  }
+
+  &__reserved {
+    background: red;
+    pointer-events: none;
+  }
+
+  &__active {
+    background: #2ad72a;
+    pointer-events: none;
+  }
+}

@@ -1,0 +1,31 @@
+.timePickerMenu {
+  position: absolute;
+
+  margin-top: 10px;
+
+  transform: translateX(50%);
+  right: 50%;
+
+  min-width: 120px;
+
+  gap: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background: white;
+  border: solid 1px rgba(0,0,0,0.05);
+
+  max-height: 200px;
+  overflow-y: scroll;
+
+  visibility: hidden;
+  opacity: 0;
+
+  transition: .3s linear all;
+
+  &__active {
+    visibility: visible;
+    opacity: 1;
+  }
+}
